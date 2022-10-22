@@ -45,7 +45,7 @@ $breakpoints: (
 @include font-face("gothampro_light", "GPL");
 @include font-face("gothampro_bold", "GPB");
 @include font-face("gothampro_black", "GPBL");
-// @import "../../node_modules/swiper/swiper";
+@import "../../node_modules/swiper/swiper";
 
 // Import BEM blocks scss
 @import "../blocks/**/*.scss";

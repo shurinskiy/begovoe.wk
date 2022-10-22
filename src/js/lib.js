@@ -118,6 +118,32 @@ export const slideToggle = (el, duration, cb) => {
 /* ======== Готовые решения ======== */
 
 /* 
+* Переключатель класса для мобильного меню
+*/
+
+export const menuToggle = (menu, toggles, cls = 'opened') => {
+
+	if(!toggles || !menu) return;
+
+	toggles.forEach(item => {
+		item.addEventListener('click', (e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			menu.classList.toggle(`${cls}`);
+		});
+	});
+
+	['click','touchstart'].forEach(event => {
+		document.addEventListener(event, function(e) {
+			if(menu.classList.contains(`${cls}`) && !e.target.closest(`.${menu.className.split(' ')[0]}`)) {
+				e.preventDefault();
+				menu.classList.remove(`${cls}`);
+			}
+		});
+	});
+}
+
+/* 
 * Упрощенный аналог wow.js. Отслеживает появление элемента снизу
 * в области просмотра браузера. Добавляет и (опционально)
 * убирает класс .active
@@ -793,4 +819,27 @@ export const makeModalFrame = function(options = {}) {
 				close(e);
 		});
 	}
+}
+
+
+// Плавная прокрутка к заданному элементу
+export const scrollToId = (items) => {
+	items.forEach(item => {
+		item.addEventListener('click', (e) => {
+			e.preventDefault();
+			document.getElementById(item.getAttribute('href').substring(1)).scrollIntoView({
+				behavior: 'smooth',
+				block: 'start'
+			});
+		});
+	});		
+}
+
+
+// Плавная прокрутка к верху страницы
+export const scrollToTop = (item) => {
+	item.addEventListener('click', (e) => {
+		e.preventDefault();
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	});
 }

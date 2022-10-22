@@ -1,0 +1,49 @@
+.socials {
+	$self: &;
+	display: flex;
+
+	&_top {
+		#{$self}__link {
+			
+			&_tel { background-image: url('#{$images-path}icons-sprite.svg#icon-phone-view-green'); }
+			
+			&_wapp { background-image: url('#{$images-path}icons-sprite.svg#icon-soc-wapp-view-green'); }
+			
+			&_tgm { background-image: url('#{$images-path}icons-sprite.svg#icon-soc-tgm-view-green'); }
+		}
+	}
+	
+	&__link {
+		flex-shrink: 0;
+		width: 13px;
+		height: 12px;
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-color: transparent;
+		margin-right: 15px;
+		
+		@include media('<=sm') {
+			margin-right: 20px;
+			width: 28px;
+			height: 26px;
+
+		}
+		
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&_tel {
+			background-image: url('#{$images-path}icons-sprite.svg#icon-phone-view-blue');
+		}
+		
+		&_wapp {
+			background-image: url('#{$images-path}icons-sprite.svg#icon-soc-wapp-view-blue');
+		}
+		
+		&_tgm {
+			background-image: url('#{$images-path}icons-sprite.svg#icon-soc-tgm-view-blue');
+		}
+	}
+}
