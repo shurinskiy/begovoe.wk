@@ -1,4 +1,3 @@
-import Swiper, { Pagination } from 'swiper';
 import scrollLock from 'scroll-lock';
 
 (() => {
@@ -6,14 +5,14 @@ import scrollLock from 'scroll-lock';
 	const $shell = $header.find('.header__side');
 	const vh = window.innerHeight * 0.01; // решение проблемы 100vh для меню на мобильных устройствах
 
-	let menuOpen = (e) => {
+	const menuOpen = (e) => {
 		e.preventDefault();
 		e.stopPropagation();
 		$shell.addClass('opened');
 		scrollLock.disablePageScroll();
 	}
 	
-	let menuClose = (e) => {
+	const menuClose = (e) => {
 		e.stopPropagation();
 		
 		if($shell.hasClass('opened')) {
@@ -42,17 +41,6 @@ import scrollLock from 'scroll-lock';
 	window.addEventListener('resize', () => {
 		let vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
-	});
-
-
-	
-	const swiper = new Swiper(".header__slider", {
-		modules: [Pagination],
-		slidesPerView: 1,
-		loop: true,
-		pagination: {
-	
-		}
 	});
 
 })();

@@ -1,0 +1,46 @@
+.about {
+	$self: &;
+
+	&__inner {
+
+	}
+
+	&__title {
+		margin-bottom: 35px;
+	}
+
+	&__text {
+		font-family: "GPL", sans-serif;
+		font-size: 22px;
+		line-height: 1.65;
+		text-align: center;
+		max-width: 995px;
+		margin: 0 auto 10px;
+	}
+
+	&__scheme {
+		margin-bottom: 45px;
+
+		img {
+			&:nth-child(1) {
+				
+			}
+
+			&:nth-child(2) {
+				display: none;
+			}
+		}
+	}
+
+	&__map {
+		margin-top: 100px;
+		overflow: hidden;
+		border-radius: 100px;
+		height: 400px;
+		margin-bottom: 100px;
+
+		[class*="copyrights-pane"] {
+			display: none;
+		}
+	}
+}

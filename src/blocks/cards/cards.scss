@@ -1,0 +1,44 @@
+.cards {
+	$self: &;
+
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 50px;
+
+		&:nth-child(odd) {
+			flex-direction: row-reverse;
+		}
+	}
+
+	&__image {
+		overflow: hidden;
+		border-radius: 200px;
+		width: calc(50% - 13px);
+		max-width: 485px;
+		
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	
+	&__side {
+		width: calc(50% - 13px);
+	}
+
+	&__title {
+		font-family: "GPM", sans-serif;
+		font-size: 36px;
+		color: #101E2D;
+		margin-bottom: 25px;
+	}
+	
+	&__text {
+		font-family: "GPL", sans-serif;
+		line-height: 1.4;
+	}
+}

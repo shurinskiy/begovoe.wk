@@ -54,7 +54,8 @@
 		"animate-scss": "^3.2.1",
 		"jquery": "^3.6.0",
 		"scroll-lock": "^2.1.5",
-		"swiper": "^8.4.4"
+		"swiper": "^8.4.4",
+		"ymaps": "^0.2.1"
 	},
 	"externalJs": {
 		"jquery": "dist/jquery.min.js"
@@ -69,6 +70,6 @@
 		"from": "src/**/*.html",
 		"to": "src/blocks",
 		"js": "src/js/blocks.js",
-		"omit": "@@,js-,active,col,row"
+		"omit": "@@,js-,active,col,row,swiper"
 	}
 }

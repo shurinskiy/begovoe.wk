@@ -1,6 +1,6 @@
 .header {
 	$self: &;
-	margin-bottom: 100px;
+	margin-bottom: 110px;
 
 	&__mobile {
 		box-sizing: border-box;
@@ -31,7 +31,7 @@
 		display: flex;
 		justify-content: space-between;
 		padding-top: 50px;
-		margin-bottom: 55px;
+		margin-bottom: 50px;
 	}
 
 	&__logo {
@@ -95,7 +95,7 @@
 		display: flex;
 		justify-content: flex-end;
 		flex-wrap: wrap;
-		margin: 18px -13px 13px;
+		margin: 18px -13px 20px;
 		
 		@include media('<=sm') {
 			flex-flow: column nowrap;
@@ -159,16 +159,5 @@
 
 	&__bottom {
 
-	}
-
-	&__slider {
-		overflow: hidden;
-		border-radius: 100px;
-	}
-
-	&__slide {
-		img {
-			width: 100%;
-		}
 	}
 }
