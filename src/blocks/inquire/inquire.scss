@@ -1,0 +1,20 @@
+.inquire {
+	$self: &;
+	margin-bottom: 100px;
+
+	&__inner {
+		background-color: #F6F9F6;
+		border-radius: 70px;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	&__title {
+		margin-bottom: 35px;
+	}
+
+	&__form {
+		max-width: 830px;
+		margin: 0 auto;
+	}
+}

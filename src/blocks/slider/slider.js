@@ -2,7 +2,7 @@ import Swiper, { Pagination } from 'swiper';
 
 (() => {
 
-	const swiper = new Swiper(".header__slider", {
+	const slider = new Swiper(".slider", {
 		modules: [Pagination],
 		slidesPerView: 1,
 		loop: true,

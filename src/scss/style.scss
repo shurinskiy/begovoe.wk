@@ -46,6 +46,7 @@ $breakpoints: (
 @include font-face("gothampro_bold", "GPB");
 @include font-face("gothampro_black", "GPBL");
 @import "../../node_modules/swiper/swiper";
+@import "../../node_modules/photo-sphere-viewer/dist/photo-sphere-viewer";
 
 // Import BEM blocks scss
 @import "../blocks/**/*.scss";
@@ -55,7 +56,7 @@ body, html {
 	font-size: #{$basesize}px;
 	line-height: 1.2;
 	font-family: "GP", sans-serif;
-	background-color: #fafafa;
+	background-color: #fff;
 	min-height: 100vh;
 	display: flex;
 	flex-flow: column nowrap;

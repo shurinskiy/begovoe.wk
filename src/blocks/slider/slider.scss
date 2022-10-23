@@ -1,7 +1,19 @@
 .slider {
 	$self: &;
-	overflow: hidden;
-	border-radius: 100px;
+	
+	@include media('<=xs') {
+		height: 250px;
+	}
+
+	&_sport {
+		#{$self}__text {
+			transform: translate(-50%, -110%);
+		}
+
+		#{$self}__pagination {
+			bottom: 150px;
+		}
+	}
 
 	&__wrapper {
 
@@ -13,6 +25,8 @@
 		img {
 			display: block;
 			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 	}
 
@@ -29,6 +43,14 @@
 		z-index: 1;
 		width: 100%;
 		max-width: calc(100% - 120px);
+		
+		@include media('<=xlg') {
+			font-size: calc(4.2vw + 29px);
+		}
+		
+		@include media('<=xs') {
+			max-width: calc(100% - 80px);
+		}
 	}
 
 	&__pagination {

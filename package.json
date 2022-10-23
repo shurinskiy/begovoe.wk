@@ -53,6 +53,7 @@
 	"dependencies": {
 		"animate-scss": "^3.2.1",
 		"jquery": "^3.6.0",
+		"photo-sphere-viewer": "^4.7.3",
 		"scroll-lock": "^2.1.5",
 		"swiper": "^8.4.4",
 		"ymaps": "^0.2.1"
