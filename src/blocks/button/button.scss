@@ -12,4 +12,11 @@
 	width: 100%;
 	max-width: 380px;
 	margin: 0 auto;
+	
+	@include media('<=xs') {
+		background-color: #66BB46;
+		color: #fff;
+		font-size: 20px;
+		padding: 10px 10px 6px;
+	}
 }

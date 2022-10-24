@@ -5,4 +5,8 @@
 	text-align: center;
 	color: #101E2D;
 	font-size: 48px;
+	
+	@include media('<=sm') {
+		font-size: 36px;
+	}
 }

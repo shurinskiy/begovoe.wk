@@ -22,6 +22,18 @@
 		border-radius: 80px;
 		grid-column: span 1;
 		
+		@include media('<=lg') {
+			border-radius: 60px;
+		}
+		
+		@include media('<=md') {
+			border-radius: 40px;
+		}
+		
+		@include media('<=sm') {
+			border-radius: 30px;
+		}
+		
 		&:nth-child(1) {
 			grid-column: 1 / span 3;
 		}
@@ -56,5 +68,14 @@
 		font-size: 14px;
 		text-transform: uppercase;
 		color: #fff;
+		
+		@include media('<=lg') {
+			font-size: 12px;
+		}
+		
+		@include media('<=md') {
+			bottom: 20px;
+			left: 25px;
+		}
 	}
 }
