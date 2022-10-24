@@ -6,6 +6,7 @@
 		border-radius: 120px 120px 0 0;
 		position: relative;
 		height: 700px;
+		background: url('#{$images-path}videos-bg.png') center / cover no-repeat transparent;
 		
 		&::after {
 			display: block;

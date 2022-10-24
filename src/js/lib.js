@@ -808,6 +808,12 @@ export const makeModalFrame = function(options = {}) {
 			
 			if(typeof Inputmask !== 'undefined') 
 				Inputmask.mask(body.querySelectorAll('input[type="tel"]'));
+
+			if (options.video) {
+				let video = body.querySelector('video');
+				video.setAttribute('controls', '');
+				video.setAttribute('autoplay', '');
+			}
 		}
 
 		document.querySelectorAll(`[data-${cls}]`).forEach(item => {
