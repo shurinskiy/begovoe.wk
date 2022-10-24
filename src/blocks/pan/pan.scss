@@ -15,7 +15,12 @@
 		overflow: hidden;
 		height: 500px;
 		border-radius: 100px;
-
+		
+		@include media('<=xs') {
+			border-radius: 80px;
+			height: 260px;
+		}
+		
 		&::after {
 			display: block;
 			content: '';
@@ -25,6 +30,43 @@
 			right: 65px;
 			bottom: 45px;
 			background: url('#{$images-path}icons-sprite.svg#icon-panorama-view-white') center / auto no-repeat transparent;
+			
+			@include media('<=xs') {
+				width: 28px;
+				height: 23px;
+				right: 50px;
+				bottom: 40px;
+			}
+		}
+
+		.psv-overlay-image {
+
+			@include media('<=xs') {
+				margin-bottom: 10px;
+			}
+		
+			svg {
+				max-width: 300px;
+
+				@include media('<=xs') {
+					max-width: 130px;
+				}
+				
+				@include media('<=xxs') {
+					max-width: 100px;
+				}
+			}
+		}
+
+		.psv-overlay-text {
+
+			@include media('<=xs') {
+				font-size: 20px;
+			}
+
+			@include media('<=xxs') {
+				font-size: 16px;
+			}
 		}
 	}
 }

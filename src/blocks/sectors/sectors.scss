@@ -1,0 +1,56 @@
+.sectors {
+	$self: &;
+	margin-bottom: 100px;
+
+	&__inner {
+
+	}
+
+	&__title {
+		margin-bottom: 40px;
+	}
+
+	&__text {
+		font-family: "GPL", sans-serif;
+		font-size: 24px;
+		margin-bottom: 100px;
+		text-align: center;
+		line-height: 1.6;
+		
+		p:nth-child(1) {
+			margin: 0 auto 30px;
+			max-width: 640px;
+		}
+		
+		p:nth-child(2) {
+			margin: 0 auto;
+			max-width: 990px;
+		}
+	}
+	
+	&__items {
+		margin-bottom: 95px;
+	}
+	
+	&__note {
+		box-sizing: border-box;
+		font-family: "GPL", sans-serif;
+		font-size: 20px;
+		line-height: 1.45;
+		border: 2px solid #66BB46;
+		border-radius: 70px;
+		padding: 45px 100px;
+		display: flex;
+		align-items: center;
+
+		&::before {
+			display: block;
+			content: '';
+			width: 75px;
+			height: 70px;
+			background: url('#{$images-path}icons-sprite.svg#icon-scheme-view-green') center / auto no-repeat transparent;
+			flex-shrink: 0;
+			margin-right: 28px;
+		}
+	}
+}

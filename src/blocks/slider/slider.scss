@@ -8,6 +8,10 @@
 	&_sport {
 		#{$self}__text {
 			transform: translate(-50%, -110%);
+			
+			@include media('<=sm') {
+				transform: translate(-50%, -90%);
+			}
 		}
 
 		#{$self}__pagination {

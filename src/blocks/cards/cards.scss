@@ -84,9 +84,14 @@
 	&__text {
 		font-family: "GPL", sans-serif;
 		line-height: 1.4;
-
+		
 		@include media('<=xs') {
 			margin-bottom: 50px;
 		}
+	}
+	
+	&__more {
+		font-family: "GPL", sans-serif;
+		color: #009BDD;
 	}
 }
