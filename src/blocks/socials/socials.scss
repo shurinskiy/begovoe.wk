@@ -12,6 +12,13 @@
 			&_tgm { background-image: url('#{$images-path}icons-sprite.svg#icon-soc-tgm-view-green'); }
 		}
 	}
+
+	&_order {
+		#{$self}__link {
+			width: 27px;
+			height: 26px;
+		}
+	}
 	
 	&__link {
 		flex-shrink: 0;
