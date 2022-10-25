@@ -77,6 +77,10 @@
 		@include media('<=xs') {
 			font-size: 14px;
 		}
+		
+		@include media('<=xxxs') {
+			padding: 40px 40px 35px;
+		}
 
 		&::before {
 			display: block;

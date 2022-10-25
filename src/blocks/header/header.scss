@@ -79,10 +79,15 @@
 			overflow: auto;
 			background-color: #101E2D;
 			justify-content: center;
+			padding: 20px;
 
 			&.opened {
 				left: 0;
 			}
+		}
+		
+		@include media('<=xs') {
+			justify-content: space-around;
 		}
 	}
 	
@@ -121,6 +126,10 @@
 			margin: 0 0 60px;
 		}
 		
+		@include media('<=xs') {
+			margin: 0;
+		}
+		
 		a {
 			text-decoration: none;
 			color: #101E2D;
@@ -131,10 +140,23 @@
 				color: #fff;
 				font-size: 30px;
 				margin: 0 0 40px;
+				text-align: center;
 				
 				&:hover {
 					color: #66BB46;
 				}
+			}
+			
+			@include media('<=xs') {
+
+				&:last-child {
+					margin: 0;
+				}
+			}
+			
+			@include media('<=xxxs') {
+				font-size: 24px;
+				margin: 0 0 20px;
 			}
 		}
 	}
