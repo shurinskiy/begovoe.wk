@@ -9,13 +9,21 @@
 		#{$self}__text {
 			transform: translate(-50%, -110%);
 			
-			@include media('<=sm') {
-				transform: translate(-50%, -90%);
+			@include media('<=md') {
+				transform: translate(-50%, -75%);
+			}
+			
+			@include media('<=xs') {
+				transform: translate(-50%, -50%);
 			}
 		}
 
 		#{$self}__pagination {
 			bottom: 150px;
+			
+			@include media('<=xs') {
+				bottom: 15px;
+			}
 		}
 	}
 
@@ -64,6 +72,10 @@
 		bottom: 25px;
 		width: 100%;
 		text-align: center;
+		
+		@include media('<=xxs') {
+			bottom: 18px;
+		}
 	}
 
 	&__dot {

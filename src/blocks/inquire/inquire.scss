@@ -1,20 +1,50 @@
 .inquire {
 	$self: &;
 	margin-bottom: 100px;
+	
+	@include media('<=xs') {
+		margin-bottom: 60px;
+	}
 
 	&__inner {
 		background-color: #F6F9F6;
 		border-radius: 70px;
 		padding-top: 50px;
 		padding-bottom: 50px;
+		
+		@include media('<=xs') {
+			padding-top: 55px;
+			padding-bottom: 60px;
+
+		}
 	}
 
 	&__title {
 		margin-bottom: 35px;
+		
+		@include media('<=xs') {
+			margin-bottom: 15px;
+		}
+
+		br {
+			display: none;
+					
+			@include media('<=xs') {
+				display: block;
+			}
+		}
 	}
 
 	&__form {
 		max-width: 830px;
 		margin: 0 auto;
+		
+		@include media('<=xs') {
+			max-width: 420px;
+		}
+		
+		@include media('<=xxs') {
+			max-width: 325px;
+		}
 	}
 }

@@ -4,10 +4,19 @@
 	&_inquire {
 		#{$self}__fields {
 			margin-bottom: 50px;
+			
+			@include media('<=xs') {
+				margin-bottom: 43px;
+				display: block;
+			}
 		}
 
 		#{$self}__input {
 			grid-column: 1 / span 1;
+		
+			@include media('<=xs') {
+				margin-bottom: 14px;
+			}
 		}
 
 		#{$self}__textarea {
@@ -29,6 +38,11 @@
 		border-radius: 20px;
 		padding: 13px 24px;
 		resize: none;
+		width: 100%;
+		
+		@include media('<=xs') {
+			padding: 17px 24px;
+		}
 	}
 	
 	&__input {
@@ -36,7 +50,10 @@
 	}
 
 	&__textarea {
-
+		
+		@include media('<=xs') {
+			min-height: 130px;
+		}
 	}
 
 	&__submit {

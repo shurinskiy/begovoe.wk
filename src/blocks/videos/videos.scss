@@ -1,5 +1,10 @@
 .videos {
 	$self: &;
+	margin-bottom: 100px;
+	
+	@include media('<=xxs') {
+		margin-bottom: 35px;
+	}
 
 	&__ground {
 		overflow: hidden;
@@ -8,6 +13,11 @@
 		height: 700px;
 		background: url('#{$images-path}videos-bg.png') center / cover no-repeat transparent;
 		
+		@include media('<=xxs') {
+			border-radius: 80px 80px 0 0;
+			height: 600px;
+		}
+			
 		&::after {
 			display: block;
 			content: '';
@@ -19,6 +29,11 @@
 			bottom: 0;
 			left: 0;
 			z-index: 1;
+			
+			@include media('<=xxs') {
+				border-radius: 80px 80px 0 0;
+				height: 80px;
+			}
 		}
 
 		video {
@@ -39,7 +54,20 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		grid-gap: 26px;
-		margin-bottom: 100px;
+		
+		@include media('<=md') {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		
+		@include media('<=sm') {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		
+		@include media('<=xxs') {
+			display: block;
+			max-width: 280px;
+			margin: 0 auto;
+		}
 	}
 	
 	&__item {
@@ -49,6 +77,10 @@
 		border-radius: 80px;
 		grid-column: span 1;
 		aspect-ratio: 4 / 3.1;
+		
+		@include media('<=xxs') {
+			margin-bottom: 26px;
+		}
 
 		&::after {
 			display: block;

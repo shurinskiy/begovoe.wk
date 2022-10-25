@@ -1,6 +1,10 @@
 .header {
 	$self: &;
 	margin-bottom: 110px;
+	
+	@include media('<=xxs') {
+		margin-bottom: 55px;
+	}
 
 	&__mobile {
 		box-sizing: border-box;
@@ -32,6 +36,11 @@
 		justify-content: space-between;
 		padding-top: 50px;
 		margin-bottom: 50px;
+		
+		@include media('<=xs') {
+			padding-top: 40px;
+			margin-bottom: 25px;
+		}
 	}
 
 	&__logo {
@@ -43,10 +52,14 @@
 			transform: translateX(-50px);
 		}
 		
+		@include media('<=xs') {
+			min-width: auto;
+			max-width: 265px;
+			margin-left: 20px;
+		}
+
 		@include media('<=xxs') {
 			transform: none;
-			margin-left: 0;
-			min-width: auto;
 		}
 	}
 
@@ -85,6 +98,11 @@
 
 		@include media('<=sm') {
 			display: block;
+		}
+		
+		@include media('<=xxs') {
+			height: 30px;
+			width: 30px;
 		}
 	}
 
@@ -158,11 +176,18 @@
 	}
 
 	&__bottom {
-
+		
+		@include media('<=xxs') {
+			padding: 0;
+		}
 	}
 	
 	&__slider {
 		overflow: hidden;
 		border-radius: 100px;
+		
+		@include media('<=xxs') {
+			border-radius: 80px;
+		}
 	}
 }

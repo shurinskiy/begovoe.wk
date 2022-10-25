@@ -1,6 +1,10 @@
 .pan {
 	$self: &;
 	margin-bottom: 100px;
+		
+	@include media('<=xxs') {
+		margin-bottom: 65px;
+	}
 
 	&__inner {
 
@@ -8,6 +12,11 @@
 
 	&__title {
 		margin-bottom: 50px;
+		
+		@include media('<=xxs') {
+			max-width: 300px;
+			margin: 0 auto 25px;
+		}
 	}
 
 	&__view {
@@ -18,9 +27,14 @@
 		
 		@include media('<=xs') {
 			border-radius: 80px;
-			height: 260px;
+			height: 250px;
 		}
 		
+		@include media('<=xxs') {
+			max-width: 382px;
+			margin: 0 auto;
+		}
+			
 		&::after {
 			display: block;
 			content: '';

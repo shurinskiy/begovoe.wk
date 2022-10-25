@@ -1,6 +1,10 @@
 .sectors {
 	$self: &;
 	margin-bottom: 100px;
+	
+	@include media('<=xxs') {
+		margin-bottom: 60px;
+	}
 
 	&__inner {
 
@@ -8,6 +12,10 @@
 
 	&__title {
 		margin-bottom: 40px;
+		
+		@include media('<=xxs') {
+			margin-bottom: 15px;
+		}
 	}
 
 	&__text {
@@ -17,9 +25,20 @@
 		text-align: center;
 		line-height: 1.6;
 		
+		@include media('<=xxs') {
+			font-size: 22px;
+			max-width: 370px;
+			margin: 0 auto 70px;
+			line-height: 1.65;
+		}
+		
 		p:nth-child(1) {
 			margin: 0 auto 30px;
 			max-width: 640px;
+			
+			@include media('<=xxs') {
+				margin: 0 auto 12px;
+			}
 		}
 		
 		p:nth-child(2) {
@@ -30,6 +49,10 @@
 	
 	&__items {
 		margin-bottom: 95px;
+		
+		@include media('<=xs') {
+			margin-bottom: 55px;
+		}
 	}
 	
 	&__note {
@@ -42,6 +65,18 @@
 		padding: 45px 100px;
 		display: flex;
 		align-items: center;
+		
+		@include media('<=xs') {
+			display: block;
+			text-align: center;
+			padding: 40px 60px 35px;
+			line-height: 1.55;
+			border-width: 1px;
+		}
+		
+		@include media('<=xs') {
+			font-size: 14px;
+		}
 
 		&::before {
 			display: block;
@@ -51,6 +86,10 @@
 			background: url('#{$images-path}icons-sprite.svg#icon-scheme-view-green') center / auto no-repeat transparent;
 			flex-shrink: 0;
 			margin-right: 28px;
+		
+			@include media('<=xs') {
+				margin: 0 auto 40px;
+			}
 		}
 	}
 }

@@ -1,6 +1,10 @@
 .about {
 	$self: &;
 	margin-bottom: 50px;
+	
+	@include media('<=xs') {
+		margin-bottom: 5px;
+	}
 
 	&__inner {
 
@@ -8,6 +12,10 @@
 
 	&__title {
 		margin-bottom: 35px;
+		
+		@include media('<=xxs') {
+			margin-bottom: 25px;
+		}
 	}
 
 	&__text {
@@ -17,18 +25,37 @@
 		text-align: center;
 		max-width: 995px;
 		margin: 0 auto 10px;
+		
+		@include media('<=xxs') {
+			font-size: 20px;
+			line-height: 1.5;
+			max-width: 350px;
+		}
 	}
 
 	&__scheme {
 		margin-bottom: 45px;
 
+		@include media('<=xxs') {
+			padding-top: 32px;
+		}
+
 		img {
+			display: block;
+			margin: 0 auto;
+
 			&:nth-child(1) {
-				
+				@include media('<=xxs') {
+					display: none;
+				}
 			}
 
 			&:nth-child(2) {
 				display: none;
+
+				@include media('<=xxs') {
+					display: block;
+				}
 			}
 		}
 	}
@@ -40,6 +67,16 @@
 		height: 400px;
 		margin-bottom: 100px;
 		background: url('#{$images-path}about-map-bg.jpg') center / cover no-repeat transparent;
+		
+		@include media('<=xs') {
+			margin-bottom: 60px;
+		}
+		
+		@include media('<=xxs') {
+			border-radius: 80px;
+			margin-top: 60px;
+			height: 250px;
+		}
 
 		[class*="copyrights-pane"] {
 			display: none;

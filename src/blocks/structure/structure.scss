@@ -8,11 +8,20 @@
 
 	&__title {
 		margin-bottom: 80px;
+		
+		@include media('<=xs') {
+			margin-bottom: 28px;
+		}
 	}
 	
 	&__item {
 		max-width: 990px;
 		margin: 0 auto 90px;
+		
+		@include media('<=xxs') {
+			max-width: 380px;
+			margin: 0 auto 70px;
+		}
 	}
 
 	&__subtitle {
@@ -62,5 +71,9 @@
 
 	&__button {
 		margin-top: -25px;
+		
+		@include media('<=xxs') {
+			margin-top: -14px;
+		}
 	}
 }
