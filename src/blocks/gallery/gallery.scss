@@ -60,7 +60,16 @@
 			width: calc(50% - 26px);
 			margin: 0 10px 20px;
 		}
+	
+		@include media('<=sm') {
+			width: auto;
+		}
 		
+		@include media('<=xxs') {
+			flex-wrap: wrap;
+			width: calc(50% - 26px);
+		}
+	
 		&.active {
 			z-index: 1;
 			box-shadow: 0 0 0 4px #66BB46;

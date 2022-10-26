@@ -3,12 +3,23 @@
 	display: flex;
 	justify-content: space-between;
 
+	@include media('<=sm') {
+		flex-flow: column nowrap;
+		padding-top: 30px;
+	}
+
 	&__gallery {
 		width: calc(50% - 38px);
 		order: -1;
 		
 		@include media('<=lg') {
 			width: calc(40% - 20px);
+		}
+		
+		@include media('<=sm') {
+			order: 0;
+			width: 100%;
+			margin-bottom: 30px;
 		}
 	}
 	
@@ -20,6 +31,10 @@
 		
 		@include media('<=lg') {
 			width: calc(60% - 20px);
+		}
+
+		@include media('<=sm') {
+			width: 100%;
 		}
 	}
 
@@ -35,6 +50,10 @@
 			max-width: 330px;
 			line-height: 1.0;
 			margin-bottom: 20px;
+		}
+		
+		@include media('<=sm') {
+			max-width: none;
 		}
 	}
 	
@@ -66,12 +85,37 @@
 			font-size: 14px;
 			line-height: 1.6;
 		}
+		
+		@include media('<=sm') {
+			margin-bottom: 20px;
+			max-width: none;
+		}
 	}
 	
 	&__buttons {
 		align-self: stretch;
 		display: flex;
 		margin-top: auto;
+		
+		@include media('<=sm') {
+			display: none;
+		}
+
+		&_mobile {
+			display: none;
+			order: 1;
+		
+			@include media('<=sm') {
+				display: flex;
+			}
+		
+			@include media('<=xxs') {
+				flex-flow: column nowrap;
+				width: 100%;
+				max-width: 280px;
+				margin: 0 auto;
+			}
+		}
 	}
 
 	&__button {

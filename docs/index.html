@@ -30,7 +30,7 @@
 				<a href="#contacts">Контакты</a>
 			</nav>
 			<div class="header__contacts">
-				<a class="header__button" href="./">Напишите нам</a>
+				<a class="header__button" href="./" data-modal="order-inquire">Напишите нам</a>
 				<a class="header__button" href="tel:+79993456789">+7 999 34 56 789</a>
 				<div class="header__socials socials">
 					<a class="socials__link socials__link_wapp" href="./"></a>
@@ -761,10 +761,24 @@
 				<div class="details__text">На территории имеются ограничения на размещение промышленных и сельскохозяйственных объектов и сооружений, а также на осуществление хозяйственной деятельности, сопровождающейся загрязнением окружающей природной среды, природных.</div>
 				<div class="details__buttons">
 					<button class="details__button details__button_order">Забронировать</button>
-					<button class="details__button details__button_more">Узнать больше</button>
+					<button class="details__button details__button_more" data-modal="order-inquire">Узнать больше</button>
 				</div>
 			</div>
+			<div class="details__buttons details__buttons_mobile">
+				<button class="details__button details__button_order">Забронировать</button>
+				<button class="details__button details__button_more" data-modal="order-inquire">Узнать больше</button>
+			</div>
 		</div>
+	</div>
+	<div id="order-inquire">
+		<form class="form form_inquire" action="./">
+			<div class="form__fields">
+				<input class="form__input" type="text" placeholder="Имя">
+				<input class="form__input" type="text" placeholder="Телефон или Email">
+				<textarea class="form__textarea" placeholder="Сообщение"></textarea>
+			</div>
+			<button class="form__submit button" type="submit">Отправить</button>
+		</form>
 	</div>
 </div> 
 

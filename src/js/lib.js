@@ -772,7 +772,7 @@ makeModalFrame({
 export const makeModalFrame = function(options = {}, cb) {
 	const { scrollLock, Inputmask } = options;
 	const cls = options.cls || 'modal';
-	const elements = options.el || `[data-${cls}]`;
+	const items = options.el || `[data-${cls}]`;
 
 	const modal = document.querySelector(`#${cls}__underlay`);
 	const body = modal.querySelector(`.${cls}__content`);
@@ -819,7 +819,16 @@ export const makeModalFrame = function(options = {}, cb) {
 			if (typeof cb === 'function') return cb.call(body);
 		}
 
-		document.querySelectorAll(elements).forEach(item => {
+		/* document.addEventListener('click', (e) => {
+			let elements = document.querySelectorAll(selector);
+			console.log(elements);
+			let match = document.querySelectorAll(elements).some(el => e.target.closest(el));
+			if (match && e.target.dataset[`${cls}`]) {
+				open(e);
+			}
+		}); */
+
+		items.forEach(item => {
 			if(item.dataset[`${cls}`])
 				item.addEventListener('click', open);
 		});
