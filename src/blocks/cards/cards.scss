@@ -24,6 +24,8 @@
 
 	&__image {
 		overflow: hidden;
+		backface-visibility: hidden;
+		transform: translate3d(0, 0, 0);
 		border-radius: 200px;
 		width: calc(50% - 13px);
 		max-width: 485px;
