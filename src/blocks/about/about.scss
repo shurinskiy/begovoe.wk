@@ -63,6 +63,8 @@
 	&__map {
 		margin-top: 100px;
 		overflow: hidden;
+		backface-visibility: hidden;
+		transform: translate3d(0, 0, 0);
 		border-radius: 100px;
 		height: 400px;
 		margin-bottom: 100px;
