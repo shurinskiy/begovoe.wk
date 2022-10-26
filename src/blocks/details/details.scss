@@ -1,0 +1,102 @@
+.details {
+	$self: &;
+	display: flex;
+	justify-content: space-between;
+
+	&__gallery {
+		width: calc(50% - 38px);
+		order: -1;
+		
+		@include media('<=lg') {
+			width: calc(40% - 20px);
+		}
+	}
+	
+	&__side {
+		width: calc(50% - 38px);
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: flex-start;
+		
+		@include media('<=lg') {
+			width: calc(60% - 20px);
+		}
+	}
+
+	&__title {
+		font-family: "GPM", sans-serif;
+		color: #101E2D;
+		font-size: 36px;
+		margin-bottom: 30px;
+		align-self: stretch;
+		
+		@include media('<=md') {
+			font-size: 24px;
+			max-width: 330px;
+			line-height: 1.0;
+			margin-bottom: 20px;
+		}
+	}
+	
+	&__price {
+		background: url('#{$images-path}details-price-bg.svg') center right / auto no-repeat transparent;
+		color: #66BB46;
+		font-family: "GPM", sans-serif;
+		font-size: 36px;
+		border-radius: 20px;
+		padding: 20px 45px 20px 30px;
+		margin-bottom: 30px;
+		
+		@include media('<=md') {
+			font-size: 20px;
+			padding: 10px 45px 10px 25px;
+			border-radius: 10px;
+			margin-bottom: 20px;
+		}
+	}
+	
+	&__text {
+		align-self: stretch;
+		font-family: "GPL", sans-serif;
+		max-width: 480px;
+		line-height: 1.4;
+		margin-bottom: 40px;
+		
+		@include media('<=md') {
+			font-size: 14px;
+			line-height: 1.6;
+		}
+	}
+	
+	&__buttons {
+		align-self: stretch;
+		display: flex;
+		margin-top: auto;
+	}
+
+	&__button {
+		@extend %reset-button;
+		font-family: "CN", sans-serif;
+		font-size: 24px;
+		text-transform: uppercase;
+		padding: 13px 13px 9px;
+		border-radius: 100px;
+		text-align: center;
+		max-width: 280px;
+		flex-grow: 1;
+		
+		@include media('<=md') {
+			font-size: 20px;
+		}
+
+		&_order {
+			background-color: #66BB46;
+			color: #fff;
+		}
+
+		&_more {
+			color: #66BB46;
+			text-decoration: underline;
+		}
+	}
+}

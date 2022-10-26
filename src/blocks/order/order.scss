@@ -104,6 +104,32 @@
 		}
 	}
 
+	&__sectors {
+
+	}
+
+	&__sector {
+		pointer-events: bounding-box;
+		cursor: pointer;
+
+
+		text {
+			font-family: "GPM", sans-serif;
+			font-size: 11px;
+
+			tspan>tspan {
+				font-size: 9px;
+			}
+		}
+
+		&:hover {
+			path {
+				fill: #A0D259;
+				fill-opacity: 0.2;
+			}
+		}
+	}
+
 	&__close, &__turn {
 		@extend %reset-button;
 		display: none;

@@ -5,3 +5,4 @@ import "../blocks/pan/pan.js";
 import "../blocks/videos/videos.js";
 import "../blocks/order/order.js";
 import "../blocks/footer/footer.js";
+import "../blocks/details/details.js";

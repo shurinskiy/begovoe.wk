@@ -29,12 +29,12 @@ import scrollLock from 'scroll-lock';
 		}, 100);
 	});
 
-	$(window).on('click', function(e) {
+	/* $(window).on('click', function(e) {
 		if($shell.hasClass('opened') && !e.target.closest('.header__side')) {
 			e.preventDefault();
 			menuClose(e);
 		}
-	});
+	}); */
 
 	document.documentElement.style.setProperty('--vh', `${vh}px`);
 

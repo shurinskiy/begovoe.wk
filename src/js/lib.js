@@ -769,9 +769,10 @@ makeModalFrame({
 });
 */
 
-export const makeModalFrame = function(options = {}) {
+export const makeModalFrame = function(options = {}, cb) {
 	const { scrollLock, Inputmask } = options;
 	const cls = options.cls || 'modal';
+	const elements = options.el || `[data-${cls}]`;
 
 	const modal = document.querySelector(`#${cls}__underlay`);
 	const body = modal.querySelector(`.${cls}__content`);
@@ -814,10 +815,13 @@ export const makeModalFrame = function(options = {}) {
 				video.setAttribute('controls', '');
 				video.setAttribute('autoplay', '');
 			}
+
+			if (typeof cb === 'function') return cb.call(body);
 		}
 
-		document.querySelectorAll(`[data-${cls}]`).forEach(item => {
-			item.addEventListener('click', open);
+		document.querySelectorAll(elements).forEach(item => {
+			if(item.dataset[`${cls}`])
+				item.addEventListener('click', open);
 		});
 
 		document.addEventListener('click', (e) => {
