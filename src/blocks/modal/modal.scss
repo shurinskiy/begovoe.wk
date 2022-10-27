@@ -35,6 +35,18 @@
 		}
 	}
 
+	&_self {
+		#{$self}__body {
+			max-width: none;
+			width: auto;
+			padding: 0;
+		}
+
+		#{$self}__close {
+			background-image: url('#{$images-path}icons-sprite.svg#icon-close-view-white');
+		}
+	}
+
 	&_order-inquire, &_order-ready {
 		
 		#{$self}__body {
@@ -100,6 +112,7 @@
 		position: relative;
 		background-color: #fff;
 		border-radius: 60px;
+		overflow: hidden;
 		margin: auto;
 		padding: 40px;
 		width: 100%;

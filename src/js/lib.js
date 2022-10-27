@@ -19,7 +19,7 @@ export const getHeight = (el) => {
 			maxHeight: 'none',
 			display: 'block',
 			height: 'auto',
-			opacity: '0',
+			opacity: '0'
 		});
 		
 		el.after(clone);

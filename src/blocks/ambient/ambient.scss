@@ -36,6 +36,7 @@
 		border-radius: 80px;
 		grid-column: span 1;
 		height: 240px;
+		cursor: pointer;
 		
 		&:nth-child(1) { 
 			order: 1; 
@@ -59,10 +60,6 @@
 		&:nth-child(11) { order: 11; }
 		&:nth-child(12) { order: 12; }
 
-		&:last-child {
-			border-radius: 0;
-		}
-
 		img {
 			display: block;
 			width: 100%;
@@ -85,7 +82,7 @@
 		}
 		
 		@include media('<=xs') {
-			border-radius: 60px !important;
+			border-radius: 60px;
 			height: 140px;
 	
 			&:nth-child(1) { 

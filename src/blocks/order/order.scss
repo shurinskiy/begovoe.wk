@@ -206,17 +206,12 @@
 		font-size: 24px;
 		line-height: 1.5;
 		text-align: center;
+		margin-bottom: 30px;
 		
 		@include media('<=xxs') {
 			font-size: 22px;
 			line-height: 1.42;
 			margin-bottom: 27px;
-		}
-
-		br {
-			@include media('<=xxs') {
-				display: none;
-			}
 		}
 	}
 
