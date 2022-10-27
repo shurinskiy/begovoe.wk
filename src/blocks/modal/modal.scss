@@ -14,6 +14,10 @@
 	padding: 30px;
 	align-items: center;
 	overflow-y: auto;
+	@keyframes show_fade {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
 	
 	@include media('<=xxs') {
 		padding: 15px;
@@ -28,6 +32,21 @@
 			&::after {
 				content: 'Задайте id целевого блока в атрибуте data-modal';
 			}
+		}
+	}
+
+	&_order-inquire {
+		
+		#{$self}__body {
+			background-color: #F6F9F6;
+		}
+		
+		#{$self}__content {
+			animation: show_fade 0.3s;
+		}
+
+		.title {
+			margin-bottom: 40px;
 		}
 	}
 

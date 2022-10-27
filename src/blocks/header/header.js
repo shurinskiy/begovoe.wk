@@ -1,6 +1,11 @@
 import scrollLock from 'scroll-lock';
+import { addUnderlay, makeModalFrame } from "../../js/lib";
 
 (() => {
+	addUnderlay('modal');
+	makeModalFrame({ el: '.header__button', scrollLock });
+
+
 	const $header = $('.header');
 	const $shell = $header.find('.header__side');
 	const vh = window.innerHeight * 0.01; // решение проблемы 100vh для меню на мобильных устройствах

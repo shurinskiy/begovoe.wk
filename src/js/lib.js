@@ -753,89 +753,68 @@ import { addUnderlay, makeModalFrame } from "../../js/lib";
 addUnderlay('modal');
 makeModalFrame({ cls: 'modal' });
 * 
-* @вызов с передачей внешних скриптов:
+* @вызов с использованием внешних решений:
 * 
 import { addUnderlay, makeModalFrame } from "../../js/lib";
 import scrollLock from 'scroll-lock';
 import Inputmask from "inputmask";
 addUnderlay('modal');
-makeModalFrame({ 
-	cls: 'modal',
-	scrollLock,
-	Inputmask: Inputmask({
-		"mask": "+7 (999) 999-99-99", 
-		showMaskOnHover: false
-	})
+makeModalFrame({ el: '.some-el', cls: 'modal', scrollLock}, function() {
+	Inputmask({ "mask": "+7 (999) 999-99-99", showMaskOnHover: false });
+	Inputmask.mask(this.querySelectorAll('input[type="tel"]'));
 });
 */
 
 export const makeModalFrame = function(options = {}, cb) {
-	const { scrollLock, Inputmask } = options;
+	const { scrollLock } = options;
 	const cls = options.cls || 'modal';
-	const items = options.el || `[data-${cls}]`;
+	const select = options.el || `[data-${cls}]`;
 
 	const modal = document.querySelector(`#${cls}__underlay`);
 	const body = modal.querySelector(`.${cls}__content`);
 	
 	if (modal) {
-		const close = function(e) {
-			e.preventDefault();
 
+		const close = function() {
 			if(typeof scrollLock !== 'undefined') {
 				scrollLock.clearQueueScrollLocks();
 				scrollLock.enablePageScroll();
 			}
-
 			modal.className = `${cls}`;
 			modal.style.display = "none";
 			body.innerHTML = '';
 		}
-
-		const open = function(e) {
-			e.preventDefault();
-
-			if (getComputedStyle(modal).display !== 'none') 
-				close(e);
-
-			const id = e.currentTarget.dataset[`${cls}`] || 'error';
-			const content = (id == '#') ? e.currentTarget.innerHTML : document.querySelector('#' + id).innerHTML;
-
-			body.insertAdjacentHTML('beforeend', content);
+		
+		const open = function(el) {
+			const id = el.dataset[`${cls}`] || 'error';
+			const content = (id == '#') ? el.innerHTML : document.querySelector('#' + id).innerHTML;
+			
+			modal.className = `${cls}`;
 			modal.classList.add(id != '#' ? `${cls}_${id}`:`${cls}_self`);
 			modal.style.display = "block";
+			body.innerHTML = '';
+			body.insertAdjacentHTML('beforeend', content);
 
 			if(typeof scrollLock !== 'undefined')
 				scrollLock.disablePageScroll();
-			
-			if(typeof Inputmask !== 'undefined') 
-				Inputmask.mask(body.querySelectorAll('input[type="tel"]'));
-
-			if (options.video) {
-				let video = body.querySelector('video');
-				video.setAttribute('controls', '');
-				video.setAttribute('autoplay', '');
-			}
 
 			if (typeof cb === 'function') return cb.call(body);
 		}
 
-		/* document.addEventListener('click', (e) => {
-			let elements = document.querySelectorAll(selector);
-			console.log(elements);
-			let match = document.querySelectorAll(elements).some(el => e.target.closest(el));
-			if (match && e.target.dataset[`${cls}`]) {
-				open(e);
-			}
-		}); */
+		document.addEventListener('click', (e) => {
+			let el = e.target.closest(select);
 
-		items.forEach(item => {
-			if(item.dataset[`${cls}`])
-				item.addEventListener('click', open);
+			if (el && el.dataset[`${cls}`]) {
+				e.preventDefault();
+				open(el);
+			}
 		});
 
 		document.addEventListener('click', (e) => {
-			if (e.target == modal || e.target.classList.contains(`${cls}__close`))
-				close(e);
+			if (e.target == modal || e.target.classList.contains(`${cls}__close`)) {
+				e.preventDefault();
+				close();
+			}
 		});
 	}
 }
