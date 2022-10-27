@@ -35,7 +35,7 @@
 		}
 	}
 
-	&_order-inquire {
+	&_order-inquire, &_order-ready {
 		
 		#{$self}__body {
 			background-color: #F6F9F6;
@@ -44,9 +44,17 @@
 		#{$self}__content {
 			animation: show_fade 0.3s;
 		}
-
+	}
+	
+	&_order-inquire {
 		.title {
 			margin-bottom: 40px;
+		}
+	}
+	
+	&_order-ready {
+		.title {
+			margin-bottom: 10px;
 		}
 	}
 

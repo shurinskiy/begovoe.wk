@@ -4,6 +4,6 @@ import { addUnderlay, makeModalFrame } from "../../js/lib";
 (() => {
 
 	addUnderlay('modal');
-	makeModalFrame({ el: '.details__button_more', scrollLock });
+	makeModalFrame({ el: '.details__button', scrollLock });
 	
 })();
