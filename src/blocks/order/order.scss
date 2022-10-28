@@ -208,10 +208,13 @@
 		text-align: center;
 		margin-bottom: 30px;
 		
+		@include media('<=xs') {
+			margin-bottom: 27px;
+		}
+		
 		@include media('<=xxs') {
 			font-size: 22px;
 			line-height: 1.42;
-			margin-bottom: 27px;
 		}
 	}
 
@@ -220,7 +223,7 @@
 		align-items: center;
 		justify-content: center;
 
-		@include media('<=xxs') {
+		@include media('<=xs') {
 			flex-flow: column nowrap;
 		}
 	}
@@ -230,7 +233,7 @@
 		color: #009BDD;
 		margin-right: 30px;
 
-		@include media('<=xxs') {
+		@include media('<=xs') {
 			margin: 0 0 20px;
 		}
 	}
