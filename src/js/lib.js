@@ -780,8 +780,11 @@ export const makeModalFrame = function(options = {}, cb) {
 				scrollLock.clearQueueScrollLocks();
 				scrollLock.enablePageScroll();
 			}
+
 			modal.className = `${cls}`;
 			modal.style.display = "none";
+
+			body.className = `${cls}__content`;
 			body.innerHTML = '';
 		}
 		
@@ -792,13 +795,16 @@ export const makeModalFrame = function(options = {}, cb) {
 			modal.className = `${cls}`;
 			modal.classList.add(id != '#' ? `${cls}_${id}`:`${cls}_self`);
 			modal.style.display = "block";
+
 			body.innerHTML = '';
+			body.className = `${cls}__content`;
 			body.insertAdjacentHTML('beforeend', content);
 
 			if(typeof scrollLock !== 'undefined')
 				scrollLock.disablePageScroll();
 
-			if (typeof cb === 'function') return cb.call(body);
+			if (typeof cb === 'function') 
+				return cb.call(body);
 		}
 
 		document.addEventListener('click', (e) => {
