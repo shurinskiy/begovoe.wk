@@ -4,7 +4,6 @@ import { addUnderlay, makeModalFrame } from "../../js/lib";
 (() => {
 	addUnderlay('modal');
 	makeModalFrame({ el: '.ambient__image', scrollLock }, function() {
-		let cnt = 0;
 		const current = this.querySelector('img');
 		const rel = current.attributes.rel?.value;
 		const images_related = document.querySelectorAll(`img[rel="${rel}"]`);
@@ -13,17 +12,18 @@ import { addUnderlay, makeModalFrame } from "../../js/lib";
 		this.classList.add('modal__content_gallery');
 		current.classList.add('showed');
 		images_cleared.map(image => { this.appendChild(image.cloneNode()) });
-
+		
 		if (images_cleared) {
 			const images = this.querySelectorAll('img');
 			const _prev = document.createElement('button');
 			const _next = document.createElement('button');
+			let cnt = 0;
 
 			_prev.className = 'modal__prev';
 			_next.className = 'modal__next';
 
-			this.before(_prev);
-			this.before(_next);
+			this.append(_prev);
+			this.append(_next);
 
 			_prev.addEventListener('click', () => move(-1));
 			_next.addEventListener('click', () => move());

@@ -141,9 +141,6 @@
 	
 	&__content {
 		min-height: 200px;
-		// max-height: calc(100vh - 160px);
-		// overflow-y: auto;
-		// overflow: hidden;
 		
 		@include media('<=xxs') {
 			min-height: 140px;
