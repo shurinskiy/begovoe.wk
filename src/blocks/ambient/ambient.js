@@ -1,7 +1,10 @@
 import scrollLock from 'scroll-lock';
+import { scrollClassToggle } from "../../js/lib";
 import { addUnderlay, makeModalFrame } from "../../js/lib";
 
 (() => {
+	scrollClassToggle(document.querySelectorAll('.ambient__item'), 'showed')
+
 	addUnderlay('modal');
 	makeModalFrame({ el: '.ambient__image', scrollLock }, function() {
 		const current = this.querySelector('img');

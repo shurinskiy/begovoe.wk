@@ -7,3 +7,4 @@ import "../blocks/order/order.js";
 import "../blocks/footer/footer.js";
 import "../blocks/details/details.js";
 import "../blocks/ambient/ambient.js";
+import "../blocks/cards/cards.js";

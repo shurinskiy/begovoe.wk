@@ -156,8 +156,9 @@ export const menuToggle = (menu, toggles, cls = 'opened') => {
 * 
 * @параметры разметки: 
 * 
-* data-shift="2" - множитель показывающий на какую часть от своей 
-* высоты, должен показаться снизу элемент, чтобы добавился класс
+* data-shift="0.5" - множитель показывающий на какую часть от своей 
+* высоты, должен показаться снизу элемент, чтобы добавился класс.
+* Принимает положительные и отрицательные значения.
 * 
 * data-repeat - убирать класс, если элемент вновь уходит за нижндюю
 * границу браузера
@@ -165,20 +166,20 @@ export const menuToggle = (menu, toggles, cls = 'opened') => {
 * @вызов:
 * 
 import { scrollClassToggle } from "../../js/lib";
-scrollClassToggle(document.querySelectorAll('.someblock'))
+scrollClassToggle(document.querySelectorAll('.someblock'), 'showed')
 */
 
-export const scrollClassToggle = (items) => {
+export const scrollClassToggle = (items, cls="active") => {
 	if (items.length) {
 		const classToggle = (item) => {
 			const repeat = item.dataset['repeat'] != undefined;
 			const box = item.getBoundingClientRect();
-			const shift = box.height/item.dataset['shift'] || 1;
+			const shift = box.height * item.dataset['shift'] || 0;
 			const over = box.bottom + shift > 0;
-			const under = box.bottom - shift - window.innerHeight < 0;
+			const under = box.bottom + shift - window.innerHeight < 0;
 	
-			if (repeat || !item.classList.contains('active'))
-				item.classList[(over && under) ? 'add': 'remove']('active');
+			if (repeat || !item.classList.contains(`${cls}`))
+				item.classList[(over && under) ? 'add': 'remove'](`${cls}`);
 		};
 		
 		[...items].forEach(item => {

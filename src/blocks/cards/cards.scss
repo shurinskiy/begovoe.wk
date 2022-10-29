@@ -1,11 +1,16 @@
 .cards {
 	$self: &;
+	@keyframes item_show {
+		from { transform: scale3d(.8, .8, .8); }
+		to { opacity: 1; }
+	}
 
 	&__item {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: 50px;
+		opacity: 0;
 
 		&:nth-child(even) {
 			flex-direction: row-reverse;
@@ -19,6 +24,11 @@
 
 		@include media('<=xxs') {
 			max-width: 380px;
+		}
+
+		&.showed {
+			animation: item_show 0.5s;
+			animation-fill-mode: forwards;
 		}
 	}
 
