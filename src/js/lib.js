@@ -805,7 +805,7 @@ export const makeModalFrame = function(options = {}, cb) {
 				scrollLock.disablePageScroll();
 
 			if (typeof cb === 'function') 
-				return cb.call(body);
+				return cb.call(body, el);
 		}
 
 		document.addEventListener('click', (e) => {

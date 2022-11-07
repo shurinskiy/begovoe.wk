@@ -1,7 +1,7 @@
 @@include("_head.html", {"class":"home"}) 
 @@include("_header.html") 
 
-<section class="about">
+<section class="about" id="about">
 	<div class="about__inner container">
 		<h2 class="about__title title">Урочище Беговое &mdash; </h2>
 		<div class="about__text">земельные участки в спокойном экологически чистом месте с красивейшей природой и потенциалом для отдыха и постоянного проживания.</div>
@@ -65,7 +65,7 @@
 	</div>
 </section>
 
-<section class="structure">
+<section class="structure" id="structure">
 	<div class="structure__inner container">
 		<h2 class="structure__title title">Инфраструктура</h2>
 		<div class="structure__item">
@@ -85,7 +85,7 @@
 			<h3 class="structure__subtitle structure__subtitle_children">Школа и детский сад</h3>
 			<div class="structure__text">В деревне есть детский сад, а в соседнем селе - школа. <br> В 30 км от села располагается город Алапаевск, с магазинами, торговым центром, больницей, школами и детскими садами.  </div>
 		</div>
-		<a class="structure__button button" href="./">Узнать больше</a>
+		<a class="structure__button button" href="./" data-modal="order-inquire">Узнать больше</a>
 	</div>
 </section>
 
@@ -142,21 +142,13 @@
 
 <section class="inquire">
 	<div class="inquire__inner container">
-		<h2 class="inquire__title title">Интересно? <br> Задайте вопрос</h2>
-		<form class="inquire__form form form_inquire" action="./">
-			<div class="form__fields">
-				<input class="form__input" type="text" placeholder="Имя">
-				<input class="form__input" type="text" placeholder="Телефон или Email">
-				<textarea class="form__textarea" placeholder="Сообщение"></textarea>
-			</div>
-			<button class="form__submit button" type="submit">Отправить</button>
-		</form>
+		@@include("_form.html", {"class": "inquire__form"})
 	</div>
 </section>
 
-<section class="ambient">
+<section class="ambient" id="media">
 	<div class="ambient__inner container">
-		<h2 class="ambient__title title">Окружающее пространство</h2>
+		<h2 class="ambient__title title">Фото и видео</h2>
 		<div class="ambient__items">
 			<div class="ambient__item">
 				<div class="ambient__image" data-modal="#">
@@ -263,7 +255,7 @@
 	</div>
 </section>
 
-<section class="sectors">
+<section class="sectors" id="sectors">
 	<div class="sectors__inner container">
 		<h2 class="sectors__title title">Участки</h2>
 		<div class="sectors__text">
@@ -308,7 +300,7 @@
 		<div class="order__patch">
 			<span>Схема участков</span>
 		</div>
-		<div class="order__call">
+		<div class="order__call" id="contacts">
 			<h2 class="order__title title">Скорее <br> звоните нам</h2>
 			<div class="order__text">И наши специалисты расскажут вам все подробно.</div>
 			<div class="order__contacts">

@@ -5,7 +5,6 @@ import { addUnderlay, makeModalFrame } from "../../js/lib";
 	addUnderlay('modal');
 	makeModalFrame({ el: '.header__button', scrollLock });
 
-
 	const $header = $('.header');
 	const $shell = $header.find('.header__side');
 	const vh = window.innerHeight * 0.01; // решение проблемы 100vh для меню на мобильных устройствах
@@ -46,6 +45,15 @@ import { addUnderlay, makeModalFrame } from "../../js/lib";
 	window.addEventListener('resize', () => {
 		let vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
+	});
+
+	$(".header__menu").on('click', 'a[href^="#"]', function(e) {
+		if ($(this).parent('.header__menu').css('flex-direction') == 'row') {
+			e.preventDefault();
+			let $element = $($(this).attr('href'));
+		
+			$("html, body").animate({ scrollTop: $element.offset().top }, "slow");
+		}
 	});
 
 })();

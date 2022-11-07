@@ -19,22 +19,6 @@
 		}
 	}
 
-	&__title {
-		margin-bottom: 35px;
-		
-		@include media('<=xs') {
-			margin-bottom: 15px;
-		}
-
-		br {
-			display: none;
-					
-			@include media('<=xs') {
-				display: block;
-			}
-		}
-	}
-
 	&__form {
 		max-width: 830px;
 		margin: 0 auto;

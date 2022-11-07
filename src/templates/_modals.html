@@ -2,10 +2,10 @@
 	<div id="order-details">
 		<div class="details">
 			<div class="details__gallery">
-				<img src="./images/stuff/details-image-1.jpg" alt="">
-				<img src="./images/stuff/details-image-2.jpg" alt="">
-				<img src="./images/stuff/details-image-3.jpg" alt="">
-				<img src="./images/stuff/details-image-4.jpg" alt="">
+				<!-- <img src="./images/stuff/details-image-1.jpg" alt=""> -->
+				<!-- <img src="./images/stuff/details-image-2.jpg" alt=""> -->
+				<!-- <img src="./images/stuff/details-image-3.jpg" alt=""> -->
+				<!-- <img src="./images/stuff/details-image-4.jpg" alt=""> -->
 			</div>
 			<div class="details__side">
 				<h3 class="details__title">Земельный участок площадью 2345 м2</h3>
@@ -23,15 +23,7 @@
 		</div>
 	</div>
 	<div id="order-inquire">
-		<h3 class="title">Интересно? Задайте вопрос</h3>
-		<form class="form form_inquire" action="./">
-			<div class="form__fields">
-				<input class="form__input" type="text" placeholder="Имя">
-				<input class="form__input" type="text" placeholder="Телефон или Email">
-				<textarea class="form__textarea" placeholder="Сообщение"></textarea>
-			</div>
-			<button class="form__submit button" type="submit">Отправить</button>
-		</form>
+		@@include("_form.html")
 	</div>
 	<div id="order-ready">
 		<h3 class="title">Готово!</h3>
@@ -41,6 +33,7 @@
 				<input class="form__input" type="text" placeholder="Имя">
 				<input class="form__input" type="text" placeholder="Телефон или Email">
 			</div>
+			<div class="form__alert"></div>
 			<button class="form__submit button" type="submit">Отправить</button>
 		</form>
 	</div>
